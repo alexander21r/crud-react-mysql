@@ -10,7 +10,8 @@ const View = () => {
   useEffect(() => {
     getSinglePost(id);
   }, [id]);
-
+  
+  // Fetching single post with id
   const getSinglePost = async (id) => {
     const res = await axios.get(`http://localhost:3003/posts/${id}`);
     if (res.status === 200) {

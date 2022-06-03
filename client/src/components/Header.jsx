@@ -6,11 +6,12 @@ const Header = () => {
   const [activeTab, setActiveTab] = useState("Home");
   const location = useLocation();
 
+  // Changing tab depending on active tab
   useEffect(() => {
     if (location.pathname === "/") {
       setActiveTab("Home");
     } else if (location.pathname === "/add") {
-      setActiveTab("AddUser");
+      setActiveTab("AddPost");
     } else if (location.pathname === "/about") {
       setActiveTab("About");
     }
@@ -23,8 +24,8 @@ const Header = () => {
           <p className={`${activeTab === "Home" ? "active " : ""} `}>Home</p>
         </Link>
         <Link to="/add">
-          <p className={`${activeTab === "AddUser" ? "active " : ""} `}>
-            Add User
+          <p className={`${activeTab === "AddPost" ? "active " : ""} `}>
+            Add Post
           </p>
         </Link>
         <Link to="/about">

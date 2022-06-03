@@ -17,14 +17,15 @@ const AddEdit = () => {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  const addUser = async (data) => {
+  // Adding
+  const addPost = async (data) => {
     const res = await axios.post("http://localhost:3003/posts", data);
     if (res.status === 200) {
       toast.success("Post added");
     }
   };
 
-  const updateUser = async (data, id) => {
+  const updatePost = async (data, id) => {
     const res = await axios.put(`http://localhost:3003/posts/${id}`, data);
     if (res.status === 200) {
       toast.success("Post updated");
@@ -37,9 +38,9 @@ const AddEdit = () => {
       toast.error("Fill in all fields");
     } else {
       if (!id) {
-        addUser(state);
+        addPost(state);
       } else {
-        updateUser(state, id);
+        updatePost(state, id);
       }
       setTimeout(() => navigate("/"), 500);
     }

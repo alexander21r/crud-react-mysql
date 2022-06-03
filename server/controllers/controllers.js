@@ -1,5 +1,7 @@
 const { Posts } = require("../models");
 
+// Used sequlize methods to make the crud functionallity
+
 const getPosts = async (req, res) => {
   try {
     const posts = await Posts.findAll();

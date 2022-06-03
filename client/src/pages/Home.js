@@ -12,6 +12,7 @@ const Home = () => {
     getPosts();
   }, []);
 
+  // Fetching all posts
   const getPosts = async () => {
     try {
       const res = await axios.get("http://localhost:3003/posts");
@@ -21,7 +22,8 @@ const Home = () => {
     }
   };
 
-  const onDeleteUser = async (id) => {
+  // Deleting a post with id
+  const deletePost = async (id) => {
     if (window.confirm("Are your sure you want to delete")) {
       const res = await axios.delete(`http://localhost:3003/posts/${id}`);
       if (res.status === 200) {
@@ -31,9 +33,10 @@ const Home = () => {
     }
   };
 
-  const foundPersonsByCity = () => {
+  // Filter by city function
+  const foundPostsByCity = () => {
     let inputField = document
-      .querySelector("#foundPersonsByCity")
+      .querySelector("#foundPostsByCity")
       .value.toUpperCase();
 
     // eslint-disable-next-line
@@ -55,8 +58,8 @@ const Home = () => {
         <input
           placeholder="Filter by city"
           type="text"
-          onChange={foundPersonsByCity}
-          id="foundPersonsByCity"
+          onChange={foundPostsByCity}
+          id="foundPostsByCity"
           className={!postsList.length ? "disabled" : ""}
         />
       </div>
@@ -74,7 +77,7 @@ const Home = () => {
               <Link to="/">
                 <button
                   className="btn btn-delete"
-                  onClick={() => onDeleteUser(post.id)}>
+                  onClick={() => deletePost(post.id)}>
                   Delete
                 </button>
               </Link>

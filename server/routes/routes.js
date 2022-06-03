@@ -8,6 +8,7 @@ const {
   getPost,
 } = require("../controllers/controllers");
 
+// Defining routes
 router.get("/posts", getPosts);
 router.get("/posts/:id", getPost);
 router.post("/posts", createPost);

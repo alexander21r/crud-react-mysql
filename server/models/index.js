@@ -15,16 +15,6 @@ sequelize = new Sequelize(
   process.env.MASTER_PASSWORD,
   config
 );
-/*if (config.use_env_variable) {
-  sequelize = new Sequelize(process.env[config.use_env_variable], config);
-} else {
-  sequelize = new Sequelize(
-    process.env.DBNAME,
-    process.env.MASTER_USERNAME,
-    process.env.MASTER_PASSWORD,
-    config
-  );
-}*/
 
 fs.readdirSync(__dirname)
   .filter((file) => {
