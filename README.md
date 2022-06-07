@@ -6,8 +6,9 @@
 
 1. Clone this repository: `https://github.com/alexander21r/crud-react-mysql`
 2. Install Node.js and MySQL if you do not have it already
-3. Add your Master username and password and you Database name in the env file in the server folder.
-3. Go to server folder and type: `npm install`
-4. Start backend by typing: `npm run dev`
-5. Go to client folder and type: `npm install`
-6. Start frontend by typing: `npm run start`
+3. Create a database in MySQL.
+4. Add your Master username and password and you Database name in the env file in the server folder.
+5. Go to server folder and type: `npm install`
+6. Start backend by typing: `npm run dev`
+7. Go to client folder and type: `npm install`
+8. Start frontend by typing: `npm run start`
